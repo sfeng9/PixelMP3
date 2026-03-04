@@ -1,17 +1,18 @@
 import { Music } from 'lucide-react';
 import { ColorTheme } from '../App';
 
-interface Song {
-  id: number;
+export interface Song {
+  id: string;
   title: string;
   artist: string;
   duration: number;
+  album?: string;
 }
 
 interface PixelPlaylistProps {
   songs: Song[];
-  currentSongId: number;
-  onSongSelect: (id: number) => void;
+  currentSongId: string | null;
+  onSongSelect: (id: string) => void;
   theme: ColorTheme;
 }
 
